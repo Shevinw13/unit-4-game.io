@@ -1,0 +1,70 @@
+ body {
+    background-image: url("background.png");
+     }
+
+img {
+    min-height: 50px;
+    width: auto;
+    background-size: cover;
+    margin-bottom: 5px;
+}
+ 
+.cc1 {
+    background-color:orange;
+    color:white;
+    float: left;
+    margin-top: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+
+.cc2 {
+    background-color: #e2e1cd;
+    color: green;
+    padding-top: 40px;
+    padding-bottom: 120px; 
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+.cc3 {
+    background-color: green;
+    color: black;
+}
+.cc4 {
+    background-color: aqua;
+    color: black; 
+}
+
+.cc5 {
+    background-color: #0e7aa5;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 5px;
+}
+.cc6 {
+    background-color: #0e7aa5;
+    color: white;
+}
+
+#red {
+    float: left; 
+    height: 55px;
+    width: 55px;
+}
+#purple {
+    float: left; 
+    height: 55px;
+    width: 55px;
+}
+#green {
+    float: left; 
+    height: 55px;
+    width: 55px;
+}
+#blue {
+    float: left; 
+    height: 55px;
+    width: 55px;
+}
