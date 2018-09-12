@@ -2,24 +2,88 @@
 
 //var crystalNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-$(document).ready(function() {
+var counter = 0;
+var wins = 0;
+var losses = 0;
+
+var targetNumber = Math.floor(Math.random() * 51) + 50;
+
+$(document).ready(function () {
 
     var crystalNumber1 = Math.floor(Math.random() * 13)
+    $("#blue").attr("value", crystalNumber1);
     var crystalNumber2 = Math.floor(Math.random() * 13)
+    $("#green").attr("value", crystalNumber2);
     var crystalNumber3 = Math.floor(Math.random() * 13)
+    $("#purple").attr("value", crystalNumber3);
     var crystalNumber4 = Math.floor(Math.random() * 13)
-    
-    var counter = 0;
+    $("#red").attr("value", crystalNumber4);
 
-    var targetNumber = Math.floor(Math.random() * 51) + 50;
+    console.log(crystalNumber1);
+    console.log(crystalNumber2);
+    console.log(crystalNumber3);
+    console.log(crystalNumber4);
+    console.log(targetNumber);
 
-    console.log(crystalNumber1)
-    console.log(crystalNumber2)
-    console.log(crystalNumber3)
-    console.log(crystalNumber4)
-    console.log(targetNumber)
+    $("#playerResult").text(counter);
+    $("#computerResult").text(targetNumber);
+   
 
+    $("#blue").on("click", function () {
+        counter = counter + crystalNumber1;
+        $("#playerResult").text(counter)
+        console.log(targetNumber)
+        console.log(counter)
+        results()
+    });
 
+    $("#green").on("click", function () {
+        counter = counter + crystalNumber2;
+        $("#playerResult").text(counter)
+        results()
+    });
 
+    $("#purple").on("click", function () {
+        counter = counter + crystalNumber3;
+        $("#playerResult").text(counter)
+        results()
+    });
 
-})
+    $("#red").on("click", function () {
+        counter = counter + crystalNumber4;
+        $("#playerResult").text(counter)
+        results()
+    });
+
+    function results() {
+        if (targetNumber == counter) {
+            wins++;
+            $(".wins").text("Wins: " + wins);
+            console.log("added to wins")
+            resetGame()
+        } else if(targetNumber < counter) {
+            losses++;
+            $(".losses").text("Losses: " + losses);
+            console.log("added to L")
+            resetGame()
+        }
+    };
+
+    function resetGame() {
+        $("#playerResult").text("0")
+        targetNumber = Math.floor(Math.random() * 51) + 50;
+        $("#computerResult").text(targetNumber);
+
+        counter = 0;
+       
+        var crystalNumber1 = Math.floor(Math.random() * 13)
+    $("#blue").attr("value", crystalNumber1);
+    var crystalNumber2 = Math.floor(Math.random() * 13)
+    $("#green").attr("value", crystalNumber2);
+    var crystalNumber3 = Math.floor(Math.random() * 13)
+    $("#purple").attr("value", crystalNumber3);
+    var crystalNumber4 = Math.floor(Math.random() * 13)
+    $("#red").attr("value", crystalNumber4);
+    }
+
+});
